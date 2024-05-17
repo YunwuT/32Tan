@@ -1,1 +1,22 @@
-123
+import {createSlice} from '@reduxjs/toolkit'
+const conterStore=createSlice({
+  name:'counter',
+  initialState:{
+    count:0
+  },
+  reducers:{
+    inscrement(state){
+      state.count++
+    },
+    descrement(state){
+      state.count--
+    },
+    incrementByfive(state){
+      state.count+=5
+    }
+  }
+})
+const {inscrement,descrement,incrementByfive}=conterStore.actions;
+const reducer=conterStore.reducer;
+export {inscrement,descrement,incrementByfive};
+export default reducer;
